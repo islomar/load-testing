@@ -27,12 +27,31 @@
     * script-with-stages.js
 * Using checks
     * script-with-checks.js    
-* Results output
-    * https://docs.k6.io/docs/results-output
-    * https://docs.k6.io/docs/result-metrics
-    * E.g. to JSON: `k6 run --out json=my_test_result.json script.js`
-    * jq scripts examples under `scripts` folder
+* You can include both setup() and teardown()
+    * https://docs.k6.io/docs/test-life-cycle
+* InfluxDB + Grafana:
+    * https://docs.k6.io/docs/influxdb-grafana#section-using-our-docker-compose-setup
+    * http://localhost:3000
+* Grafana    
+    * Premade Grafana dashboards for k6: https://grafana.com/grafana/dashboards/2587
+
+
+### Results output
+* https://docs.k6.io/docs/results-output
+* https://docs.k6.io/docs/result-metrics
+* E.g. to JSON: `k6 run --out json=my_test_result.json script.js`
+* jq scripts examples under `scripts` folder
 * You can define groups and subgroups inside the JS file.
+* InfluxDB output:
+    * Detailed statistics can be sent directly to an InfluxDB instance
+    * `scripts/start-influxdb.sh`
+    * `k6 run --out influxdb=http://localhost:8086/k6 script.js`
+* StatsD output
+    * k6 can also push the metrics to a StatsD service like:
+    * `k6 run --out statsd script.js`
+* Multiple outputs
+    * `k6 run --out json=test.json --out influxdb=http://localhost:8086/k6`
+
 
 ## Doubts
 * What does *iterations* mean?
