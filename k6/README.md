@@ -30,6 +30,8 @@
 * Results output
     * https://docs.k6.io/docs/results-output
     * https://docs.k6.io/docs/result-metrics
+    * E.g. to JSON: `k6 run --out json=my_test_result.json script.js`
+* You can define groups and subgroups inside the JS file.
 
 ## Doubts
 * What does *iterations* mean?
